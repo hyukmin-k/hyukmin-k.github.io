@@ -8,7 +8,7 @@ parent: Computer Vision
 permalink: /docs/knowledge/computer-vision/feature-point
 ---
 
-# Layout Utilities
+# Feature Point
 {: .no_toc }
 
 ## Table of contents
@@ -17,7 +17,6 @@ permalink: /docs/knowledge/computer-vision/feature-point
 1. TOC
 {:toc}
 
----
 
 # Introduction
 
