@@ -21,6 +21,8 @@ permalink: /docs/knowledge/computer-vision/feature-point
 
 # Introduction
 
+* ![feature_building](./feature_building.jpg)
+
 # Feature Detection
 
 # Feature Description
