@@ -54,15 +54,12 @@ permalink: /docs/knowledge/computer-vision/feature-point
 * 주요 절차
 1. Scale-space Extrema Detection
   * Gaussian blurring으로 축소 효과를 준 이미지들(octave)과 사이즈를 축소시킨 이미지들에 대한 옥타브들로 scale space 구성 
-
-![Difference of Gaussian](./sift_dog.jpg)
+  * ![Difference of Gaussian](./sift_dog.jpg)
   * 정규화된 LoG(Laplacian of Gaussian) 대신 DOG(Difference of Gaussian)을 사용
     * G(x,y,k\sigma) - G(x,y,\sigma) ~ (k-1)\sigma^2 \nabla^2 G 인 관계가 있음
     * scale space 구성 시 Gaussian을 적용한 이미지가 있으므로 LoG 필터 적용 대신 뺄셈으로 간단히 계산 가능
-
-![Local extrema](./sift_local_extrema.jpg)
+  * ![Local extrema](./sift_local_extrema.jpg)
   * 3차원의 scale space에서 DOG 이미지들을 구한 다음 주변 26개의 voxel 값과 비교하여 극값인 점들을 잠재적인 keypoint로 검출
-
 2. Keypoint Localization
   * 위에서 검출한 잠재적인 키포인트들을 정제 과정을 거쳐 키포인트들을 추출  
     * 키포인트 위치를 실수 단위로 Taylor series expantion을 사용해 미세조정하고 해당 위치의 이미지 값이 임계 값을 넘지 않으면 누락시킴
