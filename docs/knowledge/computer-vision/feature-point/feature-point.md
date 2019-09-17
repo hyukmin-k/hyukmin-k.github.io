@@ -21,6 +21,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 
 # Introduction
 * 이미지들 사이에 대응점을 찾기 위한 방법으로 이미지에서 구별이 용이한 특징점들을 찾아내고(Feature Detection) 해당 특징점의 특징을 기술하여(Feature Description) 대응점을 찾아내는(Feature Matching) 방법들을 사용함
+  * ![대응점 찾기](./matcher_result1.jpg)
 
 * ![feature_building](./feature_building.jpg)
   * E, F가 구별이 용이함
@@ -51,7 +52,8 @@ permalink: /docs/knowledge/computer-vision/feature-point
     * ![Scale invariance](sift_scale_invariant.jpg)
   * 스케일 space를 구축하고 LoG(Laplacian of Gaussian) 등을 적용 후 극값을 찾는 방법으로 극복
 * 주요 절차
-  1. Scale-space Extrema Detection  
+  1. Scale-space Extrema Detection
+  
   ![Difference of Gaussian](./sift_dog.jpg)  
   
   ![Local extrema](./sift_local_extrema.jpg)
