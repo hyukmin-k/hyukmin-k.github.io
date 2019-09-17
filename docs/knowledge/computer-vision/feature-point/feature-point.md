@@ -63,12 +63,10 @@ permalink: /docs/knowledge/computer-vision/feature-point
 2. Keypoint Localization
   * 위에서 검출한 잠재적인 키포인트들을 정제 과정을 거쳐 키포인트들을 추출  
     * 키포인트 위치를 실수 단위로 Taylor series expantion을 사용해 미세조정하고 해당 위치의 이미지 값이 임계 값을 넘지 않으면 누락시킴
-    * Harris corner detector에서 사용하는 Hessian matrix를 사용한 edge, corner 구분 법을 사용해 edge인 경우 누락시킴    
-  
+    * Harris corner detector에서 사용하는 Hessian matrix를 사용한 edge, corner 구분 법을 사용해 edge인 경우 누락시킴      
 3. Orientation Assignment
   * 회전에 대한 불변성을 주기 위해 키포인트마다 방향을 계산함
   * Gradient의 히스토그램을 이용함
-
 4. Keypoint Descriptor
   * 방향을 고려한 16 * 16 샘플 array를 4 * 4 개의 블록으로 나눈 후 그 안의 gradient들을 8 방향으로 양자화하여 히스토그램으로 만듦
     * 4 * 4 * 8 = 128 차원의 벡터가 나옴
