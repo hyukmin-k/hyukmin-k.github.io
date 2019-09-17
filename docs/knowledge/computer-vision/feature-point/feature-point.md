@@ -27,6 +27,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
   * E, F가 구별이 용이함
 
 ---
+
 # Feature Detection
 * 특징점의 후보로 corner 점들을 들 수 있으며 이를 검출하기 위한 Harris corner detector와 이를 개선한 Shi-Tomasi corner detector 등이 있음
   * 회전과 이동 변환에 불변이나 scale 변환에 약함
@@ -42,6 +43,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
   * FAST를 피라미드화한 영상에 적용하여 스케일 변환에 대비
   * 방향을 가진 BRIEF 기술자를 사용하여 회전 변환에 불변
   * SIFT, SURF를 대체하기 좋음 
+
 ## [SIFT (Scale-Invariant Feature Transform)](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform)
 * 소개
   * 브리티시컬럼비아 대학교의 David Lowe 교수가 2004년에 발표한 스케일 불변 특징점을 검출하는 알고리즘과 기술자 계산 방법
@@ -76,16 +78,22 @@ permalink: /docs/knowledge/computer-vision/feature-point
 - ![Descriptor](./sift_descriptor.png)
   - 실제 이 그림을 4개 붙인 것으로 생각하면 됨
 - 위에서 계산한 128 차원 특징 벡터를 정규화 절차를 거치게 해 광도 변환에도 불변하게 만듦
+
 ## SURF (Speeded-Up Robust Features)
+
 ## FAST (Features from Accelerated Segment Test)
+
 ## ORB (Oriented FAST and Rotated BRIEF)
 
 ---
+
 # Feature Description
 
 
 ## BRIEF (Binary Robust Independent Elementary Features)
+
 ## ORB (Oriented FAST and Rotated BRIEF)
+
 ## BRISK (Binary Robust Invariant Scalable Keypoints)
 
 
