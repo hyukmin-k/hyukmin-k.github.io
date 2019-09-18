@@ -48,6 +48,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 * 소개
   * 브리티시컬럼비아 대학교의 David Lowe 교수가 2004년에 발표한 스케일 불변 특징점을 검출하는 알고리즘과 기술자 계산 방법
   * 영상의 이동, 회전, 크기 변환뿐만 아니라 **촬영 시점 변화**에도 robust함
+* {% youtube_embed.html id="EFIqErEPMwk" %}  
 * 스케일 불변
   * 이미지의 확대/축소에 대해서도 같은 특징점을 검출하는 것을 의미
   * 단순한 코너 검출 만으로는 잘되지 않음
@@ -73,8 +74,8 @@ permalink: /docs/knowledge/computer-vision/feature-point
 - Gradient의 히스토그램을 이용함
 
 ### 4. Keypoint Descriptor
-- 방향을 고려한 16 * 16 샘플 array를 4 * 4 개의 블록으로 나눈 후 그 안의 gradient들을 8 방향으로 양자화하여 히스토그램으로 만듦
-  - 4 * 4 * 8 = 128 차원의 벡터가 나옴
+- 방향을 고려한 $16 \times 16$ 샘플 array를 $4 \times 4$ 개의 블록으로 나눈 후 그 안의 gradient들을 8 방향으로 양자화하여 히스토그램으로 만듦
+  - $4 \times 4 \times 8 = 128$ 차원의 벡터가 나옴
 - ![Descriptor](./sift_descriptor.png)
   - 실제 이 그림을 4개 붙인 것으로 생각하면 됨
 - 위에서 계산한 128 차원 특징 벡터를 정규화 절차를 거치게 해 광도 변환에도 불변하게 만듦
