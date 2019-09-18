@@ -112,13 +112,33 @@ permalink: /docs/knowledge/computer-vision/feature-point
 ---
 
 # Feature Description
+- Feature descriptor의 조건
+  - 분별력이 좋아야 함
+    - 다른 특징을 가진 점들을 잘 구분할 수 있어야 함
+  - 다양한 변환에 불변이어야 함
+    - 이동, 회전, 스케일, 시점 변환 등의 다양한 변환들에 불변이어야 기술자로부터 대응점을 찾을 수 있음
+    - 어떠한 변환에 불변이어야 하는지는 사용 목적에 따라 달라질 수 있음
+  - 낮은 차원의 특징 벡터 
+    - 비슷한 성능이라면 낮은 차원의 특징 벡터가 계산에 유리
 
+## Binary Descriptors
+- 개요
+  - SIFT의 특징 벡터는 128차원이고 float형으로 하면 512바이트의 크기여서 특징점이 많으면 용량도 커지고 거리 계산에 부담이 됨
+  - 이진 벡터를 사용할 경우 Hamming 거리로 계산을 XOR 연산 후 비트 카운트로 할 수 있어 성능상 이점이 큼
+- 계산 방법
+  - 이진 기술자들은 특징점 주변에 있는 두개의 화소들의 명암 값을 비교하여 0 또는 1의 이진벡터를 만듦
+  - 비교쌍 샘플링 패턴의 차이로 불변하는 변환들에 차이가 생김
+- 종류  
+  - BRIEF (Binary Robust Independent Elementary Features)
+  - ORB (Oriented FAST and Rotated BRIEF)
+  - BRISK (Binary Robust Invariant Scalable Keypoints)
+- 비교
 
-## BRIEF (Binary Robust Independent Elementary Features)
-
-## ORB (Oriented FAST and Rotated BRIEF)
-
-## BRISK (Binary Robust Invariant Scalable Keypoints)
+|              | BRIEF  | ORB     | BRISK |
+|:-------------|:-------|:---------|:------|
+| 스케일 불변    |  X     | X        | O     |
+|회전 불변         | X       | O       |  O    |
+| 특징 벡터 bit 수  | 256bit  | 512bit | 512bit |
 
 
 ---
