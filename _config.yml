@@ -1,3 +1,4 @@
 title: "Hyukmin K"
 remote_theme: pmarsceill/just-the-docs
 search_enabled: true
+markdown: kramdown
