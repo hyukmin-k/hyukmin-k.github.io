@@ -81,10 +81,33 @@ permalink: /docs/knowledge/computer-vision/feature-point
 - 위에서 계산한 128 차원 특징 벡터를 정규화 절차를 거치게 해 광도 변환에도 불변하게 만듦
 
 ## SURF (Speeded-Up Robust Features)
+- SIFT의 DOG 대신 Box Filter의 사용으로 LoG를 근사하여 속도를 향상시킴
+- 가우시안 스무딩 대신 박스 필터 크기 조절로 옥타브를 구성
+- SIFT처럼 scale space에서 필터 된 결과에 주변 26개의 voxel 값으로부터 극점을 추출
+- SIFT 대비 약 3배 정도의 속도 향상
+- 블러나 회전된 이미지에 대해서는 동일한 특징점을 잘 잡지만 뷰포인트 변화나 조명 변화가 있을 때 동일한 특징점이 잘 안 나옴
+- 64 / 128 차원의 두 가지 기술자 제공
 
 ## FAST (Features from Accelerated Segment Test)
+- 해당 픽셀 주변의 16개 픽셀의 밝기와의 비교로 코너 검출
+  - 해당 픽셀보다 충분히 밝거나 어두운 픽셀들이 연속으로 n 개 존재하면 코너로 간주 (논문에서는 $n = 12$)
+  - ![FAST test](./fast_speedtest.jpg)
+  - 1, 9, 5, 13 점들을 우선 테스트하여 코너가 아닌 경우를 먼저 걸러내는 고속 테스트로 성능 향상
+    - 고속 테스트의 참고 픽셀 조회가 코너 모양이나 질의 순서에 따라 효율적이지 않을 수 있어, 의사결정 트리를 활용한 머신러닝으로 효율적인 질의를 하도록 함  
+- 중복되는 코너가 많이 검출되어 Non-maximal Suppression을 수행하여 제거하는 것이 좋음
+  - ![Non-maximal Suppression for FAST](./fast_kp.jpg)
+- Harris corner detector 대비 20배 이상 빠름
+  - 속도가 중요한 컴퓨터 비전 응용프로그램에 적합
 
 ## ORB (Oriented FAST and Rotated BRIEF)
+- OpenCV를 관리하던 연구소에서 SIFT, SURF를 대체할 목적으로 만듦
+  - SIFT, SURF는 **특허**가 있음
+- 특징점 검출에 FAST를 사용
+  - FAST로 찾은 후 Harris corner detector를 활용해 top N 개의 특징점을 검출
+  - 이미지 피라미드를 사용하여 스케일 불변을 달성
+  - 회전 불변을 위한 orientation 계산을 수행
+- 특징점 기술자로 BRIEF를 사용
+  - BRIEF 자체는 회전에 불변이지 않아서 이를 변형한 rBRIEF를 사용함
 
 ---
 
