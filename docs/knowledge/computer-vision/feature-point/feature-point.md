@@ -166,14 +166,14 @@ permalink: /docs/knowledge/computer-vision/feature-point
 # Applications
 
 - Structure from Motion
-  - {% include youtube_embed.html id="i7ierVkXYa8" %}
+  - {% include youtube_embed.html id="i7ierVkXYa8" %}  
 
 - Markerless AR
   - {% include youtube_embed.html id="7NS7H4FVhzw" %}
   
 - Visual SLAM
   - {% include youtube_embed.html id="cgLK5F7Kgzg" %}
-
+  - {% include youtube_embed.html id="Q3EMgGI6E5s" %}
 
 ---
 # References
