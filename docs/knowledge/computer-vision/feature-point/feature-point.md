@@ -48,7 +48,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 * 소개
   * 브리티시컬럼비아 대학교의 David Lowe 교수가 2004년에 발표한 스케일 불변 특징점을 검출하는 알고리즘과 기술자 계산 방법
   * 영상의 이동, 회전, 크기 변환뿐만 아니라 **촬영 시점 변화**에도 robust함
-* {% youtube_embed.html id="EFIqErEPMwk" %}  
+* {% include youtube_embed.html id="EFIqErEPMwk" %}  
 * 스케일 불변
   * 이미지의 확대/축소에 대해서도 같은 특징점을 검출하는 것을 의미
   * 단순한 코너 검출 만으로는 잘되지 않음
