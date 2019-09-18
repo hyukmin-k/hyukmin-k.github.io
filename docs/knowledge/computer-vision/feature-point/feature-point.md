@@ -130,8 +130,11 @@ permalink: /docs/knowledge/computer-vision/feature-point
   - 비교쌍 샘플링 패턴의 차이로 불변하는 변환들에 차이가 생김
 - 종류  
   - BRIEF (Binary Robust Independent Elementary Features)
+    - ![BRIEF sampling pattern](./brief_pattern.png)
   - ORB (Oriented FAST and Rotated BRIEF)
+    - ![ORB sampling pattern](./orb_pattern.png)
   - BRISK (Binary Robust Invariant Scalable Keypoints)
+    - ![BRISK sampling pattern](./brisk_pattern.png)
 - 비교
 
 |              | BRIEF  | ORB     | BRISK |
@@ -143,14 +146,34 @@ permalink: /docs/knowledge/computer-vision/feature-point
 
 ---
 # Feature Matching
+- 특징 기술자의 특징벡터들은 거리공간 상에 있으며 거리를 측정할 수 있음
+- 거리가 가장 가까운 특징점들끼리 짝을 지어주는 것이 매칭임
+
+
+## Bruteforce Matching
+- 한 이미지의 특징점들을 순회하면서 다른 이미지의 모든 특징점과 거리를 측정하여 가장 가까운 것을 선택하는 방법
+- 반대 방향으로도 가장 가까운지 체크하여 그러하면 matching 시키는 방법을 cross checking 이라 함
+- 가장 정확하지만 느림
+- ![Bruteforce Matching](./matcher_result1.jpg)
+
+## FLANN based Matching
+- FLANN(Fast Library for Approximate Nearest Neighbors)은 대량의 데이터셋과 고차원의 특징들에서 빠르게 최근접 이웃을 찾기위한 알고리즘들을 모아놓은 라이브러리임
+- 빠르지만 부정확할 수 있음
+- ![FLANN based Matching](./matcher_flann.jpg)
 
 
 ---
 # Applications
 
-## AR
+- Structure from Motion
+  - {% include youtube_embed.html id="i7ierVkXYa8" %}
 
-## Photogrammetry
+- Markerless AR
+  - {% include youtube_embed.html id="7NS7H4FVhzw" %}
+  
+- Visual SLAM
+  - {% include youtube_embed.html id="cgLK5F7Kgzg" %}
+
 
 ---
 # References
