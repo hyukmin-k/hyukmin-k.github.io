@@ -29,7 +29,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 ---
 
 # Feature Detection
-* 특징점의 후보로 corner 점들을 들 수 있으며 이를 검출하기 위한 Harris corner detector와 이를 개선한 Shi-Tomasi corner detector 등이 있음
+* 특징점의 후보로 corner 점들을 들 수 있으며 이를 검출하기 위한 [Harris corner detector](https://docs.opencv.org/4.1.1/dc/d0d/tutorial_py_features_harris.html)와 이를 개선한 [Shi-Tomasi corner detector](https://docs.opencv.org/4.1.1/d4/d8c/tutorial_py_shi_tomasi.html) 등이 있음
   * 회전과 이동 변환에 불변이나 scale 변환에 약함
 * David Lowe 가 스케일 변환에 불변인 SIFT 알고리즘을 만들었으며 이의 속도 향상 버전인 SURF도 나옴
   * SIFT는 기술 돌파로 평가되고 있으며 현재에도 좋은 성능을 나타내고 있음 (2019년 9월 인용 횟수 52569회로 컴퓨터 비전 분야 1위임)
@@ -58,11 +58,11 @@ permalink: /docs/knowledge/computer-vision/feature-point
 ### 1. Scale-space Extrema Detection
 - Gaussian blurring으로 축소 효과를 준 이미지들(octave)과 사이즈를 축소시킨 이미지들에 대한 옥타브들로 scale space 구성 
 - ![Difference of Gaussian](./sift_dog.jpg)
-- 정규화된 LoG(Laplacian of Gaussian) 대신 DOG(Difference of Gaussian)을 사용
+- 정규화된 [LoG(Laplacian of Gaussian)](https://en.wikipedia.org/wiki/Blob_detection#The_Laplacian_of_Gaussian) 대신 [DoG(Difference of Gaussian)](https://en.wikipedia.org/wiki/Difference_of_Gaussians)을 사용
   - $G(x,y,k\sigma) - G(x,y,\sigma) \approx (k-1) \sigma^2 \nabla^2 G$ 인 관계가 있음
   - scale space 구성 시 Gaussian을 적용한 이미지가 있으므로 LoG 필터 적용 대신 뺄셈으로 간단히 계산 가능
 - ![Local extrema](./sift_local_extrema.jpg)
-- 3차원의 scale space에서 DOG 이미지들을 구한 다음 주변 26개의 voxel 값과 비교하여 극값인 점들을 잠재적인 keypoint로 검출
+- 3차원의 scale space에서 DoG 이미지들을 구한 다음 주변 26개의 voxel 값과 비교하여 극값인 점들을 잠재적인 keypoint로 검출
 
 ### 2. Keypoint Localization
 - 위에서 검출한 잠재적인 키포인트들을 정제 과정을 거쳐 키포인트들을 추출  
@@ -80,15 +80,15 @@ permalink: /docs/knowledge/computer-vision/feature-point
   - 실제 이 그림을 4개 붙인 것으로 생각하면 됨
 - 위에서 계산한 128 차원 특징 벡터를 정규화 절차를 거치게 해 광도 변환에도 불변하게 만듦
 
-## SURF (Speeded-Up Robust Features)
-- SIFT의 DOG 대신 Box Filter의 사용으로 LoG를 근사하여 속도를 향상시킴
+## [SURF (Speeded-Up Robust Features)](https://en.wikipedia.org/wiki/Speeded_up_robust_features)
+- SIFT의 DoG 대신 Box Filter의 사용으로 LoG를 근사하여 속도를 향상시킴
 - 가우시안 스무딩 대신 박스 필터 크기 조절로 옥타브를 구성
 - SIFT처럼 scale space에서 필터 된 결과에 주변 26개의 voxel 값으로부터 극점을 추출
 - SIFT 대비 약 3배 정도의 속도 향상
 - 블러나 회전된 이미지에 대해서는 동일한 특징점을 잘 잡지만 뷰포인트 변화나 조명 변화가 있을 때 동일한 특징점이 잘 안 나옴
 - 64 / 128 차원의 두 가지 기술자 제공
 
-## FAST (Features from Accelerated Segment Test)
+## [FAST (Features from Accelerated Segment Test)](https://en.wikipedia.org/wiki/Features_from_accelerated_segment_test)
 - 해당 픽셀 주변의 16개 픽셀의 밝기와의 비교로 코너 검출
   - 해당 픽셀보다 충분히 밝거나 어두운 픽셀들이 연속으로 n 개 존재하면 코너로 간주 (논문에서는 $n = 12$)
   - ![FAST test](./fast_speedtest.jpg)
@@ -99,7 +99,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 - Harris corner detector 대비 20배 이상 빠름
   - 속도가 중요한 컴퓨터 비전 응용프로그램에 적합
 
-## ORB (Oriented FAST and Rotated BRIEF)
+## [ORB (Oriented FAST and Rotated BRIEF)](http://www.willowgarage.com/sites/default/files/orb_final.pdf)
 - OpenCV를 관리하던 연구소에서 SIFT, SURF를 대체할 목적으로 만듦
   - SIFT, SURF는 **특허**가 있음
 - 특징점 검출에 FAST를 사용
@@ -129,11 +129,11 @@ permalink: /docs/knowledge/computer-vision/feature-point
   - 이진 기술자들은 특징점 주변에 있는 두개의 화소들의 명암 값을 비교하여 0 또는 1의 이진벡터를 만듦
   - 비교쌍 샘플링 패턴의 차이로 불변하는 변환들에 차이가 생김
 - 종류  
-  - BRIEF (Binary Robust Independent Elementary Features)
+  - [BRIEF (Binary Robust Independent Elementary Features)](https://www.cs.ubc.ca/~lowe/525/papers/calonder_eccv10.pdf)
     - ![BRIEF sampling pattern](./brief_pattern.png)
-  - ORB (Oriented FAST and Rotated BRIEF)
+  - [ORB (Oriented FAST and Rotated BRIEF)](http://www.willowgarage.com/sites/default/files/orb_final.pdf)
     - ![ORB sampling pattern](./orb_pattern.png)
-  - BRISK (Binary Robust Invariant Scalable Keypoints)
+  - [BRISK (Binary Robust Invariant Scalable Keypoints)](http://www.margaritachli.com/papers/ICCV2011paper.pdf)
     - ![BRISK sampling pattern](./brisk_pattern.png)
 - 비교
 
@@ -157,7 +157,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 - ![Bruteforce Matching](./matcher_result1.jpg)
 
 ## FLANN based Matching
-- FLANN(Fast Library for Approximate Nearest Neighbors)은 대량의 데이터셋과 고차원의 특징들에서 빠르게 최근접 이웃을 찾기위한 알고리즘들을 모아놓은 라이브러리임
+- [FLANN(Fast Library for Approximate Nearest Neighbors)](https://ieeexplore.ieee.org/document/8085676)은 대량의 데이터셋과 고차원의 특징들에서 빠르게 최근접 이웃을 찾기위한 알고리즘들을 모아놓은 라이브러리임
 - 빠르지만 부정확할 수 있음
 - ![FLANN based Matching](./matcher_flann.jpg)
 
@@ -165,7 +165,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 ---
 # Applications
 
-- Structure from Motion
+- [Structure from Motion](https://en.wikipedia.org/wiki/Structure_from_motion)
   - {% include youtube_embed.html id="i7ierVkXYa8" %}  
 
 - Markerless AR
