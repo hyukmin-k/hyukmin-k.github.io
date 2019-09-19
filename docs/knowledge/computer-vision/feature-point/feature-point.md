@@ -26,6 +26,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 * ![feature_building](./feature_building.jpg)
   * E, F가 구별이 용이함
 * 좋은 특징들의 조건
+
 |    조건  | 설명  |
 |:--------|:-------|
 | 반복성    |  같은 물체에서 검출된 특징은 다른 사진에서도 비슷한 위치에 비슷한 속성으로 나와야 함 |
