@@ -25,10 +25,25 @@ permalink: /docs/knowledge/computer-vision/feature-point
 
 * ![feature_building](./feature_building.jpg)
   * E, F가 구별이 용이함
+* 좋은 특징들의 조건
+|    조건  | 설명  |
+|:--------|:-------|
+| 반복성    |  같은 물체에서 검출된 특징은 다른 사진에서도 비슷한 위치에 비슷한 속성으로 나와야 함 |
+| 분별력    | 물체의 다른 곳과 충분히 구분될 수 있는 속성을 지녀야 함 |
+| 지역성   | 그 주변의 작은 영역들만 보고 검출되어야 함  |
 
 ---
 
 # Feature Detection
+* 좋은 특징점들의 조건
+  * 반복성
+    * 
+|              | BRIEF  |
+|:-------------|:-------|
+| 반복성    |  X     |
+| 분별력    | 물체의 다른 곳과 충분히 구분될 수 있는     |
+| 지역성   | 그 주변의 작은 영역들만 보고 검출되어야 함  |
+  
 * 특징점의 후보로 corner 점들을 들 수 있으며 이를 검출하기 위한 [Harris corner detector](https://docs.opencv.org/4.1.1/dc/d0d/tutorial_py_features_harris.html)와 이를 개선한 [Shi-Tomasi corner detector](https://docs.opencv.org/4.1.1/d4/d8c/tutorial_py_shi_tomasi.html) 등이 있음
   * 회전과 이동 변환에 불변이나 scale 변환에 약함
 * David Lowe 가 스케일 변환에 불변인 SIFT 알고리즘을 만들었으며 이의 속도 향상 버전인 SURF도 나옴
@@ -171,7 +186,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 - Markerless AR
   - {% include youtube_embed.html id="7NS7H4FVhzw" %}
   
-- Visual SLAM
+- Visual [SLAM](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping)
   - {% include youtube_embed.html id="cgLK5F7Kgzg" %}
   - {% include youtube_embed.html id="Q3EMgGI6E5s" %}
 
