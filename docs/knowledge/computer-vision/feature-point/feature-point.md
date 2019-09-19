@@ -25,30 +25,26 @@ permalink: /docs/knowledge/computer-vision/feature-point
 
 * ![feature_building](./feature_building.jpg)
   * E, F가 구별이 용이함
-* 좋은 특징들의 조건
+
+* 좋은 특징점 알고리즘의 조건
 
 |    조건  | 설명  |
 |:--------|:-------|
 | 반복성    |  같은 물체에서 검출된 특징은 다른 사진에서도 비슷한 위치에 비슷한 속성으로 나와야 함 |
 | 분별력    | 물체의 다른 곳과 충분히 구분될 수 있는 속성을 지녀야 함 |
 | 지역성   | 그 주변의 작은 영역들만 보고 검출되어야 함  |
+| 정확성  | 검출된 화소 위치는 정확해야 하며 상황에 따라 subpixel 레벨도 필요함 |
+| 적당한 양 | 실제 적용 시 노이즈 등으로 인한 오차가 많기 때문에 적당한 양의 특징점들이 확보되어야 robustness를 확보할 수 있음 |
+| 계산 효율성 | 전체과정을 빠른시간 안에 마칠 수 있어야 하며 실시간 응용에서 특히 중요 |
 
 ---
 
 # Feature Detection
-* 좋은 특징점들의 조건
-  * 반복성
-    * 
-|              | BRIEF  |
-|:-------------|:-------|
-| 반복성    |  X     |
-| 분별력    | 물체의 다른 곳과 충분히 구분될 수 있는     |
-| 지역성   | 그 주변의 작은 영역들만 보고 검출되어야 함  |
   
 * 특징점의 후보로 corner 점들을 들 수 있으며 이를 검출하기 위한 [Harris corner detector](https://docs.opencv.org/4.1.1/dc/d0d/tutorial_py_features_harris.html)와 이를 개선한 [Shi-Tomasi corner detector](https://docs.opencv.org/4.1.1/d4/d8c/tutorial_py_shi_tomasi.html) 등이 있음
   * 회전과 이동 변환에 불변이나 scale 변환에 약함
 * David Lowe 가 스케일 변환에 불변인 SIFT 알고리즘을 만들었으며 이의 속도 향상 버전인 SURF도 나옴
-  * SIFT는 기술 돌파로 평가되고 있으며 현재에도 좋은 성능을 나타내고 있음 (2019년 9월 인용 횟수 52569회로 컴퓨터 비전 분야 1위임)
+  * SIFT는 기술 돌파로 평가되고 있으며 현재에도 좋은 성능을 나타내고 있음 (2019년 9월 인용 횟수 52,569회로 컴퓨터 비전 분야 1위임)
   * SURF는 SIFT 대비 3배 정도의 속도 향상이 있다고 함 
   * SIFT, SURF 모두 특허가 있어 사용 시 주의해야 함
   * SIFT, SURF 모두 descriptor도 제공함
