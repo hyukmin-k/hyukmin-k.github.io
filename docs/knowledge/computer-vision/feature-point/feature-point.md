@@ -20,7 +20,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 ---
 
 # Introduction
-* 시점 변하는 여러 사진에서 같은 곳을 나타내는 포인트들을 찾는 것을 대응점 찾기라고 함
+* 시점이 변하는 여러 사진에서 같은 곳을 나타내는 포인트들을 찾는 것을 대응점 찾기라고 함
   * 파노라마 사진 제작이나 3D reconstruction 등에서 대응점 찾기는 필수적임
 * 이미지들 사이에 대응점을 찾기 위한 방법으로 이미지에서 구별이 용이한 특징점들을 찾아내고(Feature Detection) 해당 특징점의 특징을 기술하여(Feature Description) 대응점을 찾아내는(Feature Matching) 방법들을 사용함
   * ![대응점 찾기](./matcher_result1.jpg)
@@ -197,6 +197,7 @@ permalink: /docs/knowledge/computer-vision/feature-point
 
 - Markerless AR
   - {% include youtube_embed.html id="7NS7H4FVhzw" %}
+  - {% include youtube_embed.html id="h4YVh2-3p9s" %}
   
 - Visual [SLAM](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping)
   - {% include youtube_embed.html id="cgLK5F7Kgzg" %}
