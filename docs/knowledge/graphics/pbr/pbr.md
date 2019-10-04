@@ -8,7 +8,7 @@ parent: Graphics
 permalink: /docs/knowledge/graphics/pbr
 ---
 
-# Feature Point
+# Physically Based Rendering
 {: .no_toc }
 
 ## Table of contents
