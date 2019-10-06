@@ -29,7 +29,8 @@ permalink: /docs/knowledge/deep-learning/backpropagation
   - $x$: $l \times m$ matrix
   - $W$: $m \times n$ matrix
   - $y$: $l \times n$ matrix 
-
+- $\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y}\cdot W^T$
+- $\frac{\partial L}{\partial W} = x^T \cdot \frac{\partial L}{\partial y}$
 
 
 # References
