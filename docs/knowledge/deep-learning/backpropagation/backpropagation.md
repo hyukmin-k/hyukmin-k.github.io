@@ -34,9 +34,9 @@ permalink: /docs/knowledge/deep-learning/backpropagation
 
 ### Matrix Calculus
 - $\frac{\partial y}{\partial \mathbf{M}} = \begin{pmatrix}
- \frac{\partial y}{\partial \mathbf{M_11}} & \frac{\partial y}{\partial \mathbf{M_12}} & \cdots & \frac{\partial y}{\partial \mathbf{M_1n}} \\
- \vdots  & \vdots& \ddots & \vdots \\
- \frac{\partial y}{\partial \mathbf{M_m1}} & \frac{\partial y}{\partial \mathbf{M_m2}} & \cdots & \frac{\partial y}{\partial \mathbf{M_mn}}    
+ \frac{\partial y}{\partial \mathbf{M}_11} & \frac{\partial y}{\partial \mathbf{M}_12} & \cdots & \frac{\partial y}{\partial \mathbf{M}_1n} \\
+ \vdots  & \vdots & \ddots & \vdots \\
+ \frac{\partial y}{\partial \mathbf{M}_m1} & \frac{\partial y}{\partial \mathbf{M}_m2} & \cdots & \frac{\partial y}{\partial \mathbf{M}_mn}    
  \end{pmatrix}$
 
 # References
