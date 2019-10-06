@@ -25,13 +25,19 @@ permalink: /docs/knowledge/deep-learning/backpropagation
 # Backpropagation for computational graph node types
 
 ## Matrix Multiplication Node
-- $y=xW$
-  - $x$: $l \times m$ matrix
-  - $W$: $m \times n$ matrix
-  - $y$: $l \times n$ matrix 
-- $\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y}\cdot W^T$
-- $\frac{\partial L}{\partial W} = x^T \cdot \frac{\partial L}{\partial y}$
+- $\mathbf{y=xW}$
+  - $\mathbf{x}$: $l \times m$ matrix
+  - $\mathbf{W}$: $m \times n$ matrix
+  - $\mathbf{y}$: $l \times n$ matrix 
+- $\frac{\partial L}{\partial \mathbf{x}} = \frac{\partial L}{\partial \mathbf{y}}\cdot \mathbf{W}^T$
+- $\frac{\partial L}{\partial \mathbf{W}} = \mathbf{x}^T \cdot \frac{\partial L}{\partial \mathbf{y}}$
 
+### Matrix Calculus
+- $\frac{\partial y}{\partial \mathbf{M}} = \begin{pmatrix}
+ \frac{\partial y}{\partial \mathbf{M_11}} & \frac{\partial y}{\partial \mathbf{M_12}} & \cdots & \frac{\partial y}{\partial \mathbf{M_1n}} \\
+ \vdots  & \vdots& \ddots & \vdots \\
+ \frac{\partial y}{\partial \mathbf{M_m1}} & \frac{\partial y}{\partial \mathbf{M_m2}} & \cdots & \frac{\partial y}{\partial \mathbf{M_mn}}    
+ \end{pmatrix}$
 
 # References
 - [CS231n: Convolutional Neural Networks for Visual Recognition Spring 2018](http://cs231n.stanford.edu/2018/)
