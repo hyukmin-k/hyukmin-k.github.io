@@ -40,9 +40,9 @@ permalink: /docs/knowledge/deep-learning/backpropagation
     \end{matrix}\\)
 - $\frac{\partial y}{\partial \mathbf{M}} = \begin{pmatrix} \frac{\partial y}{\partial \mathbf{M}_{11}} & \mathbf{M}_{12} \end{pmatrix}$
 - $\frac{\partial y}{\partial \mathbf{M}} = \begin{pmatrix} \frac{\partial y}{\partial \mathbf{M}_{11}} & \frac{\partial y}{\partial \mathbf{M}_{12}} & \cdots & \frac{\partial y}{\partial \mathbf{M}_{1n}} \end{pmatrix}$
-- $\frac{\partial y}{\partial \mathbf{M}} = \begin{pmatrix} \frac{\partial y}{\partial \mathbf{M}_{11}} & \frac{\partial y}{\partial \mathbf{M}_{12}} & \cdots & \frac{\partial y}{\partial \mathbf{M}_{1n}} \\
+- \\(\frac{\partial y}{\partial \mathbf{M}} = \begin{pmatrix} \frac{\partial y}{\partial \mathbf{M}_{11}} & \frac{\partial y}{\partial \mathbf{M}_{12}} & \cdots & \frac{\partial y}{\partial \mathbf{M}_{1n}} \\
  \vdots  & \vdots & \ddots & \vdots \\
- \frac{\partial y}{\partial \mathbf{M}_{m1}} & \frac{\partial y}{\partial \mathbf{M}_{m2}} & \cdots & \frac{\partial y}{\partial \mathbf{M}_{mn}} \end{pmatrix}$
+ \frac{\partial y}{\partial \mathbf{M}_{m1}} & \frac{\partial y}{\partial \mathbf{M}_{m2}} & \cdots & \frac{\partial y}{\partial \mathbf{M}_{mn}} \end{pmatrix}\\)
 
 # References
 - [CS231n: Convolutional Neural Networks for Visual Recognition Spring 2018](http://cs231n.stanford.edu/2018/)
