@@ -34,7 +34,7 @@ permalink: /docs/knowledge/deep-learning/backpropagation
 
 ### Matrix Calculus
 - $\begin{matrix}
-    1 & x & x^2 \\\
+    \frac{\partial y}{\partial \mathbf{M}_{11}} & \frac{\partial y}{\partial \mathbf{M}_{12}} & x^2 \\\
     1 & y & y^2 \\\
     1 & z & z^2 \\\
     \end{matrix}$
