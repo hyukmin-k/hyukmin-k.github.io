@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Toys
+title: Toy Projects
 nav_order: 2
-permalink: /toylist
+permalink: /toy-projects
 ---
 # Toys link
